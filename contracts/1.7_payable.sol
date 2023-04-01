@@ -11,21 +11,22 @@ contract Bank {
         owner = msg.sender;
     }
 
-    event balanceAdded(uint amount, address indexed depositedTo);
+    // event balanceAdded(uint amount, address indexed depositedTo);
+    event depositDone(uint amount, address indexed depositedTo);
 
     modifier onlyOwner() {
         require(msg.sender == owner);
         _; //run the function
     }
 
-    function addBalance(uint _toAdd) public returns (uint) {
-        require(
-            msg.sender == owner,
-            "Sorry, you are not the Owner/deployer of this contract"
-        );
-        balance[msg.sender] += _toAdd;
-        // return balance[msg.sender];
-        emit balanceAdded(_toAdd, msg.sender);
+    //Updated (2:00) https://academy.moralis.io/lessons/payable-functions-3
+    // function addBalance(uint _toAdd) public returns (uint){
+    function deposit() public payable returns (uint) {
+        // require(msg.sender == owner, "Sorry, you are not the Owner/deployer of this contract");
+        // balance[msg.sender] += _toAdd;
+        balance[msg.sender] += msg.value;
+        // emit balanceAdded(_toAdd, msg.sender);
+        emit depositDone(msg.value, msg.sender);
         return balance[msg.sender];
     }
 
