@@ -8,3 +8,7 @@
    - require
    - assert
 6. Data Location
+   - memory
+   - storage
+   - calldata
+7. Payable Functions [_See Payable here_](https://academy.moralis.io/lessons/payable-functions-3).
