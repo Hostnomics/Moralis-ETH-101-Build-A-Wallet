@@ -10,9 +10,9 @@ contract Bank {
     address owner;
 
     //Added Event (2:02): https://academy.moralis.io/lessons/events-3 - triggers when addBalance fn used
-    // event balanceAdded(uint amount, address depositedTo);
+    event balanceAdded(uint amount, address depositedTo);
     //(5:09) Covers "indexed" - we can use the indexed parameters to search/query for those events
-    // event balanceAdded(uint indexed amount, address indexed depositedTo);
+    event balanceAdded(uint indexed amount, address indexed depositedTo);
     //(5:30) - Don't need to index amount b/c we won't search for that, but we will search for depositedTo addy
     event balanceAdded(uint amount, address indexed depositedTo);
 
