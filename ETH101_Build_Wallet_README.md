@@ -13,7 +13,7 @@
    - storage
    - calldata
 
-7. Events [_Se Events here_](https://academy.moralis.io/lessons/events-3).
+7. Events [_See Events here_](https://academy.moralis.io/lessons/events-3).
    - We trigger event with `emit` in the function we want
 
 ```js
