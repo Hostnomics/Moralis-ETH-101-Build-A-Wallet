@@ -33,9 +33,13 @@ contract Bank {
     //Added withddraw (00:29): https://academy.moralis.io/lessons/transfer
     function withdraw(uint amount) public returns (uint) {
         // msg.sender is an address
-        address payable toSend = 0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db;
-        toSend.transfer(amount);
+        // address payable toSend = 0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db;
+        // toSend.transfer(amount);
+
+        require(balance[msg.sender] >= amount);
+        balance[msg.sender] -= amount;
         msg.sender.transfer(amount);
+        return balance[msg.sender];
     }
 
     function getBalance() public view returns (uint) {

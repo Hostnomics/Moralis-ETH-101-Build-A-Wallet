@@ -59,3 +59,20 @@ As shown in this screen shot:
 ![balanceAdded event in logs](https://i.imgur.com/j91B5e8.png).
 
 8. Payable Functions [_See Payable here_](https://academy.moralis.io/lessons/payable-functions-3).
+
+9. Transfer [_See Transfer here_](https://academy.moralis.io/lessons/transfer).
+
+**Transfer Function**
+
+```js
+    function withdraw(uint amount) public returns (uint) {
+        // msg.sender is an address
+        // address payable toSend = 0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db;
+        // toSend.transfer(amount);
+        require(balance[msg.sender] >= amount);
+        balance[msg.sender] -= amount;
+        msg.sender.transfer(amount);
+        return balance[msg.sender];
+    }
+
+```
