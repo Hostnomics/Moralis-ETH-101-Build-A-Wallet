@@ -4,6 +4,26 @@
 2. Structs [_See Structs here_](https://academy.moralis.io/lessons/structs-3).
 3. Mappings [_See Mappings here_](https://academy.moralis.io/lessons/mappings-2).
 4. Visibility [_See Visibility here_](https://academy.moralis.io/lessons/implementing-visibility).
+
+**FOUR TYPES OF VISIBILITY**
+
+```js
+//BACKGROUND: https://academy.moralis.io/lessons/introduction-to-visibility-2
+// FROM: https://academy.moralis.io/lessons/introduction-to-visibility-2
+// FOUR TYPES OF VISIBILITY: "From where should our fn/variable be able to be called?"
+// 1. Public - everyone. Anyone can access variable or execute function.
+// regardless if call from within THIS K or other contracts on blockchain or external service like Remix. (1:05)
+// 2. Private (2:08) - only from WITHIN That contract itself. (not remix, or later on after deployed from outside)
+// - Often helper functions to another function (like a another public fn).
+// - Also placed on state variables
+// DOES NOT mean the data is protected, Anyone can see it, just can't EXECUTE IT.
+// 3. Internal - Private and contracts deriving from it.
+// Only from within THIS contract and subsequent K's deriving from it. Like "Private Plus (Inheritance)"
+// 4. External - (4:34) - Only executed from OTHER contracts. (Not the current K you are in).
+// Useful to restrict certain functionality so not called by mistake. Often by automated interactions b/t Ks.
+//
+```
+
 5. Error Handling
    - require
    - assert
